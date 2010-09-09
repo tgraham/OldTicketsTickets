@@ -1,0 +1,22 @@
+<% title "Companies" %>
+
+<div class="actions">
+  <%= link_to(new_company_path) do %>
+    <%= content_tag :span, "Add Company", :class => "new_item" %>
+  <% end%>
+</div>
+<div class="digg_pagination"><%= will_paginate @companies %></div>
+<table>
+  <tr>
+    <th>Company</th>
+  </tr>
+  <% for company in @companies %>
+    <tr>
+      <td><%= link_to company.name, edit_company_path(company) %></td>
+      <td><%= company.notes %></td>
+      <td><%= link_to "Remove", company, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="digg_pagination"><%= will_paginate @companies %></div>

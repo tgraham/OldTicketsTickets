@@ -1,0 +1,40 @@
+<% title 'Ticket Details' %>
+
+<div class="actions">
+  <%= link_to('/ticket') do %>
+    <%= content_tag :span, "Back to Dashboard", :class => "plain" %>
+  <% end%>
+</div>
+<div class="actions">
+  <%= link_to('#', :class => 'add_reply') do %>
+    <%= content_tag :span, "Add Reply", :class => "new_item" %>
+  <% end%>
+</div>
+<div>
+  <h2><%= @ticket.title %> - <%= @ticket.status %></h2>
+  <br />
+  <p><em><%= @ticket.user.username %></em> - <%= @ticket.updated_at.strftime('%b %d, %Y - %I:%M%p')%></p>
+  <p class='ticket_content'><%= @ticket.content %></p>
+  <% unless @ticket.screenshot_file_name.nil? %>
+    <br />
+    <%= image_tag @ticket.screenshot.url(:thumb) %>
+  <% end %>
+</div>
+
+<div>
+  <% for reply in @ticket.replies %>
+  <br />
+    <p><em><%= reply.user.username %></em> - <%= reply.updated_at.strftime('%b %d, %Y - %I:%M%p') %></p>
+    <p class="ticket_content <%= reply.user.is_admin? ? 'admin_reply' : '' %>"><%= reply. notes %></p>
+    <% unless reply.screenshot_file_name.nil? %>
+      <br />
+      <%= image_tag reply.screenshot.url(:thumb) %>
+    <% end %>
+  <% end %>
+</div>
+
+<br />
+
+<div id="reply_form">
+  <%= render 'replies/form' %>
+</div>

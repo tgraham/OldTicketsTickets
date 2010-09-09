@@ -1,0 +1,16 @@
+<% title "Account Info" %>
+
+<h1><%= @user.first_name+' '+@user.last_name %></h1>
+
+<div class="actions dashboard_button">
+  <%= link_to(edit_user_path(@user)) do %>
+    <%= content_tag :span, "Edit Your Account", :class => "plain" %>
+  <% end%>
+</div>
+<div class="account_info">
+  <p><strong>Username:</strong> <%= @user.username %></p>
+  <br />
+  <p><strong>Email:</strong> <%= @user.email %></p>
+  <br />
+  <p><strong>Company:</strong> <%= @user.company.name %></p>
+</div>

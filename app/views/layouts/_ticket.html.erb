@@ -1,0 +1,48 @@
+<% title 'Ticket Info' %>
+
+<h1>Ticketing Information</h1>
+
+<div class="actions dashboard_button">
+  <%= link_to(new_ticket_path) do %>
+    <%= content_tag :span, "Create Ticket", :class => "new_item" %>
+  <% end%>
+</div>
+
+<div class="ticket_info">
+<% if current_user.try(:role) == 'user' %>
+  <p>You currently have <%= pluralize(current_user.tickets.where("status != ?", 'Closed').count, 'open ticket') %>.</p>
+  <br />
+<% end %>
+  <div class="digg_pagination"><%= will_paginate @tickets %></div>
+  <table>
+    <tr>
+      <th>Ticket ID</th>
+      <% if current_user.try(:role) == 'admin' %>
+        <th>User</th>
+        <th>Company</th>
+      <% end %>
+      <th>Subject</th>
+      <th>Priority</th>
+      <th>Status</th>
+    </tr>
+    <% if current_user.try(:role) == 'admin' %>
+      <% tickets = @tickets %>
+    <% else %>
+      <% tickets = @user.tickets %>
+    <% end %>
+    <% for ticket in tickets %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= link_to ticket.id, ticket_path(ticket) %></td>
+        <% if current_user.try(:role) == 'admin' %>
+          <td><%= ticket.user.username %></td>
+          <td><%= ticket.user.company.name %></td>
+        <% end %>
+        <td><%= ticket.title %></td>
+        <td><%= ticket.priority %></td>
+        <td><%= ticket.status %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br />
+  <div class="digg_pagination"><%= will_paginate @tickets %></div>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to Tickets, Tickets <%= @user.first_name+' '+@user.last_name %></h1>
+    <p>
+      You have been successfully signed up for Tickets, Tickets,
+      the Smith & Hammaker IT Support System.<br />
+      Your username is: <%= @user.username %>.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+  </body>
+</html>

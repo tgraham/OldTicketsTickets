@@ -1,0 +1,19 @@
+<div class="actions">
+  <%= link_to('/ticket') do %>
+    <%= content_tag :span, "Back to Dashboard", :class => "plain" %>
+  <% end%>
+</div>
+<%= semantic_form_for( @ticket, :html => { :multipart => true, :class => "normal_form" } ) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title, :label => 'Subject' %>
+    <%= f.input :content, :label => 'Description', :input_html => {:cols => 61} %>
+    <%= f.input :screenshot %>
+    <% unless @ticket.screenshot_file_name.nil? %>
+      <br />
+      <%= image_tag @ticket.screenshot.url(:thumb) %>
+    <% end %>
+    <%= f.input :priority, :collection => Ticket::PRIORITY %>
+  <% end %>
+  
+  <%= image_submit_tag 'submit.png', :class => 'signup' %>
+<% end %>

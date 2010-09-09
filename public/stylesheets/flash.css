@@ -1,0 +1,84 @@
+#flash_notice, #flash_alert, #flash_warning, #flash_error, #error_explanation {
+  width: 942px;
+  padding: 8px;
+  margin: 2px auto;
+  text-align: center;
+  font-size: 1.2em;
+  position: absolute;
+  z-index: 1000;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_alert {
+  background-color: #FFF6BF;
+  border: solid 1px #FFD324;
+}
+
+#flash_warning {
+  background-color: #FFF6BF;
+  border: solid 1px #FFD324;
+}
+
+#flash_error, #error_explanation {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+/* Session errors */
+ul.errors { 
+  color:#cc0000; 
+  margin:0.5em 0 1.5em 25%; 
+  list-style:square;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.fieldWithErrors input[type="text"], .fieldWithErrors input[type="password"] {
+  border: 2px solid red;
+}
+
+.error_messages {
+  width: 490px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+.error_messages ul {
+  margin: 2px 24px;
+}
+
+.error_messages ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+.hide-link {
+  float: right;
+  font-size: .8em;
+  padding-top: 2px;
+}

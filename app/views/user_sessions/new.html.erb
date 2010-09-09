@@ -1,0 +1,15 @@
+<% title "Login" %>
+
+<%= semantic_form_for( @user_session, :html => { :class => "pretty_form" } ) do |f| %>
+  <%= f.semantic_errors %>
+  <%= f.inputs do %>
+    <%= f.input :username %>
+    <%= f.input :password %>
+    <%= f.input :remember_me, :as => :boolean, :label => "Remember me for two weeks:" %>
+  <% end %>
+  
+  <%= image_submit_tag 'signin.png', :class => 'signup' %>
+  <br />
+  <br />
+  <%= link_to "Forgot Password?", '/reset' %>
+<% end %>

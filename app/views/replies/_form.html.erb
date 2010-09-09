@@ -1,0 +1,9 @@
+<%= semantic_form_for( @reply, :html => { :multipart => true, :class => "normal_form" } ) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :ticket_id, :as => :hidden, :value => @ticket.id %>
+    <%= f.input :notes, :label => "Comment", :input_html => {:rows =>2} %>
+    <%= f.input :screenshot %>
+  <% end %>
+  
+  <%= image_submit_tag 'submit.png', :class => 'signup' %>
+<% end %>

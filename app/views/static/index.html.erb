@@ -1,0 +1,13 @@
+<% title "Welcome" %>
+
+<div class="centered welcome">
+  <p><%= image_tag '/images/SH.gif', :class => 'SHlogo' %></p>
+  <br />
+  <h1>Welcome to Tickets, Tickets...</h1>
+  <br />
+  <% if current_user %>
+    <h2>Please visit your <%= link_to "Dashboard", '/ticket' %>  to Continue</h2>
+  <% else %>
+    <h2>Please <%= link_to "Login", login_path %> to Continue</h2>
+  <% end %>
+</div>

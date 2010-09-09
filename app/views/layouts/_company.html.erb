@@ -1,0 +1,24 @@
+<% title "Companies" %>
+
+<h1>Companies</h1>
+
+<div class="actions dashboard_button">
+  <%= link_to(new_company_path) do %>
+    <%= content_tag :span, "Add Company", :class => "new_item" %>
+  <% end%>
+</div>
+<div class="digg_pagination"><%= will_paginate @companies %></div>
+<table>
+  <tr>
+    <th>Company</th>
+  </tr>
+  <% for company in @companies %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to company.name, edit_company_path(company) %></td>
+      <td><%= company.notes %></td>
+      <td class='remove_td'><%= link_to "Remove", company, :confirm => 'Are you sure?', :method => :delete, :class => 'remove' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="digg_pagination"><%= will_paginate @companies %></div>

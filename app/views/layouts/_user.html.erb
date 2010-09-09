@@ -1,0 +1,27 @@
+<% title "Users" %>
+
+<h1>Users</h1>
+
+<div class="actions dashboard_button">
+  <%= link_to(new_user_path) do %>
+    <%= content_tag :span, "Add User", :class => "new_item" %>
+  <% end%>
+</div>
+<div class="digg_pagination"><%= will_paginate @users %></div>
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Company</th>
+  </tr>
+  <% for user in @users %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to user.username, edit_user_path(user) %></td>
+      <td><%= user.email %></td>
+      <td><%= user.company.try(:name) %></td>
+      <td class="remove_td"><%= link_to "Remove", user, :confirm => 'Are you sure?', :method => :delete, :class => 'remove' %></td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<div class="digg_pagination"><%= will_paginate @users %></div>

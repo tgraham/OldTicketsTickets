@@ -1,0 +1,16 @@
+<div id='<%= "#{@view}" %>'>
+  <div id="float_left">
+    <%= render :partial => "layouts/#{@view}" %>
+  </div>
+  
+  <div id="float_right">
+    <ul class="sidemenu">
+      <li class = 'ticket'><%= link_to "Ticket Info", '/ticket' %></li>
+      <li class = 'account'><%= link_to "Account Info", '/account' %></li>
+      <% if current_user.try(:role) == 'admin' %>
+        <li class='user'><%= link_to "Users", '/user' %></li>
+        <li class='company'><%= link_to "Companies", '/company' %></li>
+      <% end%>
+    </ul>
+  </div>
+</div>

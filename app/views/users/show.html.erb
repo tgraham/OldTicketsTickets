@@ -1,0 +1,18 @@
+<% title "Your Information" %>
+
+<div>
+  <div id="float_left">
+    <%= render :partial => 'layouts/account' %>
+  </div>
+  
+  <div id="float_right">
+    <ul class="sidemenu">
+      <li><%= link_to "Ticket Info", dashboard_path %></li>
+      <li class='active'><%= link_to "Account Info", user_path(current_user) %></li>
+      <% if current_user.role == 'admin' %>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Companies", companies_path %></li>
+      <% end%>
+    </ul>
+  </div>
+</div>

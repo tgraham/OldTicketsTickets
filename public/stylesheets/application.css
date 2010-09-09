@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+  line-height: 1.2em;
+}
+
+img {
+  border: none;
+}
+
+a {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#top {
+  width: 960px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 5px 40px;
+  border: solid 1px black;
+  top: 0px;
+}
+
+#logo {
+  float: left;
+  padding-top: 10px;
+}
+
+.SHlogo {
+  border: 1px solid #000;
+  margin: 20px;
+}
+
+#logo a {
+  color: #000;
+  text-decoration: none;
+}
+
+#user_nav {
+  float: right;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.welcome {
+  padding-top: 50px;
+}
+
+#container {
+  width: 960px;
+  min-height: 300px;
+  margin: 0 auto;
+  background-color: #F2F2F2;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+/* Pretty Form */
+.pretty_form label, .normal_form label {
+  color: #657788;
+  display: block;
+  font-family: Arial,Helvetica,Verdana,sans-serif;
+  font-size:  18px;
+  padding: 10px 0 5px;
+}
+
+.pretty_form input[type=text], .pretty_form input[type=password], .pretty_form select {
+  font: 13px 'Lucida Grande',Helvetica,Arial,sans-serif;
+  outline: 0 none;
+  padding: 7px;
+  border: 1px solid #97B5D2;
+  color: #25313C;
+  font-family: Georgia,Times,"Times New Roman",serif;
+  font-size: 28px;
+  width: 480px;
+}
+
+.pretty_form li.error input[type=text], .pretty_form li.error input[type=password] {
+  border: 2px solid red;
+}
+
+/* Login Forms */
+.pretty_form li {
+  padding-top: 7px;
+  list-style-type: none;
+}
+
+.pretty_form {
+  width: 500px;
+  display: block;
+  float: none;
+  margin: 0 auto;
+}
+
+.pretty_form .title {
+  text-align: left;
+  width: 100%;
+	padding-bottom: 30px;
+}
+
+.pretty_form h1 {
+	font-size: 36px;
+}
+
+.signup {
+  margin-top: 40px;
+}
+
+.remove_link {
+  position: absolute;
+  color: red;
+  margin: 49px 0 0 10px;
+  font-weight: bold;
+}
+
+.remove_td {
+  background: url('/images/delete.png') no-repeat scroll left transparent;
+}
+
+.remove {
+  color: red;
+  font-weight: bold;
+  padding: 0 0 0 18px;
+}
+
+/* Normal Forms */
+.normal_form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.normal_form input[type=text], .normal_form input[type=password], .normal_form textarea {
+  font: 13px 'Lucida Grande',Helvetica,Arial,sans-serif;
+  outline: 0 none;
+  padding: 5px;
+  border: 1px solid #97B5D2;
+  color: #25313C;
+  font-family: Georgia,Times,"Times New Roman",serif;
+  font-size: 18px;
+  width: 480px;
+}
+
+.normal_form input[type=checkbox] {
+  padding-right: 7px;
+}
+
+/* Admin Links */
+#adminlinks {
+  width: 960px;
+  border: 1px solid #888;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 10px;
+}
+
+/* User Nav Menu */
+
+.centered {
+  text-align: center;
+}
+
+/* Side Menus */
+.sidemenu li {
+  list-style: none outside none;
+  margin-right: -41px;
+}
+
+.sidemenu li a:hover {
+  background-color: #DDD;
+}
+
+.sidemenu li.active a:hover {
+  background-color: #F2F2F2;
+}
+
+.sidemenu li a {
+  display: block;
+  color: #666666;
+  padding: 10px 20px;
+  line-height: 1.5;
+}
+
+#ticket li.ticket a, 
+#account li.account a,
+#user li.user a,
+#company li.company a {
+  background: url('/images/menu-current.png') no-repeat scroll left center transparent;
+  font-weight: bold;
+  color: #000 !important;
+  margin-left: -20px;
+  padding-left: 32px;
+}
+
+
+#float_left {
+  float: left;
+  width: 87%;
+}
+
+#float_right {
+  padding: 2px;
+  float: right;
+  border-left: 1px solid #888;
+  min-height: 300px;
+  width: 12%;
+}
+
+.ticket_info, .account_info {
+  margin: 40px 0;
+}
+
+.ticket_content {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  margin-top: 5px;
+}
+
+.admin_reply {
+  background: #abc8e2;
+}
+
+#reply_form {
+  display: none;
+}
+
+/* Table Styling */
+table {
+  margin: 0 auto;
+  width: 100%;
+}
+th {
+  padding: 5px 5px 10px 5px;
+  text-decoration: underline;
+  text-align: left;
+}
+
+td {
+  padding: 5px;
+}
+
+.left_align {
+  text-align: left;
+}
+
+.odd {
+  background: #ccc;
+}
+
+.even {
+  background: #F2F2F2;
+}
+
+/* Pagination */
+.digg_pagination {
+  background: #F2F2F2;
+  /* self-clearing method: */
+}
+
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: .2em .5em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+  background: #FFFFFF;
+}
+
+.digg_pagination span.disabled {
+  background: #FFFFFF;
+  color: #999;
+  border: 1px solid #DDD;
+}
+  
+.digg_pagination em {
+  font-weight: bold;
+  background: #2E6AB1;
+  color: white;
+  border: 1px solid #2E6AB1;
+}
+  
+.digg_pagination a {
+  text-decoration: none;
+  color: #105CB6;
+  border: 1px solid #9AAFE5;
+}
+
+.digg_pagination a:hover, .digg_pagination a:focus {
+  color: #003;
+  border-color: #003;
+}
+  
+.digg_pagination .page_info {
+  background: #2E6AB1;
+  color: white;
+  padding: .4em .6em;
+  width: 22em;
+  margin-bottom: .3em;
+  text-align: center;
+}
+
+.digg_pagination .page_info b {
+  color: #003;
+  background: #6aa6ed;
+  padding: .1em .25em;
+}
+
+.digg_pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+* html .digg_pagination {
+  height: 1%;
+}
+
+*:first-child+html .digg_pagination {
+  overflow: hidden;
+}
+
+/* Actions button */
+.actions {
+  padding: 0 9px 0 0;
+  position: relative;
+  float: right;
+}
+
+.dashboard_button {
+  padding: 0 25px 0 0;
+  margin-top: -6px;
+}
+
+.actions a {
+  background: url('/images/button-right.png') no-repeat scroll right top #F2F2F2;
+  color: #232323;
+  display: block;
+  font-weight: bold;
+  height: 27px;
+  margin: 0 0 6px;
+  padding: 0 12px 0 0;
+}
+
+.plain {
+  background: url('/images/button-left-plain.png') no-repeat scroll left top transparent;
+  padding: 5px 0 0 12px;
+  display: block;
+  height: 20px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.new_item {
+  background: url('/images/button-left-plus.png') no-repeat scroll left top transparent;
+  padding: 5px 0 0 35px;
+  display: block;
+  height: 20px;
+  line-height: 1;
+  white-space: nowrap;
+}
