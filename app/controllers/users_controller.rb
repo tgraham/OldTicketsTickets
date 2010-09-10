@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @users = User.paginate :page => params[:page]
+    if current_user.is_user?
+      redirect_to '/account'
+    else
+      @users = User.paginate :page => params[:page]
+    end
   end
   
   def new
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated account."
-      if current_user.try(:role) == 'admin'
+      if current_user.is_admin?
         redirect_to '/user'
       else
         redirect_to '/account'

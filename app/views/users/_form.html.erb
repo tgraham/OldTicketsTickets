@@ -7,7 +7,7 @@
   <%= f.inputs do %>
     <%= f.input :first_name, :label => "First Name" %>
     <%= f.input :last_name, :label => "Last Name" %>
-    <% if current_user.try(:role) == 'admin' %>
+    <% if current_user.is_admin? %>
       <%= f.input :username %>
     <% else %>
       <%= f.input :username, :input_html => { :readonly => true } %>
@@ -15,7 +15,7 @@
     <%= f.input :email %>
     <%= f.input :password %>
     <%= f.input :password_confirmation, :label => "Password Confirmation" %>
-    <% if current_user.try(:role) == 'admin' %>
+    <% if current_user.is_admin? %>
       <%= f.input :company, :collection => @companies, :include_blank => true %>
       <%= f.input :role, :collection => User::ROLES %>
     <% end %>

@@ -2,7 +2,7 @@
 
 <h1>Assets</h1>
 
-<% if current_user.try(:role) == 'admin' %>
+<% if current_user.is_admin? %>
   <div class="actions dashboard_button">
     <%= link_to(new_asset_path) do %>
       <%= content_tag :span, "Add Asset", :class => "new_item" %>
@@ -26,14 +26,14 @@
       <th>Warranty</th>
       <th>IP</th>
     </tr>
-    <% if current_user.try(:role) == 'admin' %>
+    <% if current_user.is_admin? %>
       <% assets = @assets %>
     <% else %>
       <% assets = @user.company.assets %>
     <% end %>
     <% for asset in assets %>
       <tr class="<%= cycle('odd', 'even') %>">
-        <% if current_user.try(:role) == 'admin' %>
+        <% if current_user.is_admin? %>
           <td><%= link_to asset.name, edit_asset_path(asset) %></td>
         <% else %>
           <td><%= asset.name %></td>
@@ -43,7 +43,7 @@
         <td><%= asset.warranty.strftime('%d/%y') %></td>
         <td><%= asset.ip %></td>
         <td><%= link_to "View", asset %></td>
-        <% if current_user.try(:role) == 'admin' %>
+        <% if current_user.is_admin? %>
           <td><%= link_to image_tag("/images/delete.png"), asset, :confirm => 'Are you sure?', :method => :delete %></td>
         <% end %>
       </tr>

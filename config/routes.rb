@@ -16,6 +16,8 @@ Tickets::Application.routes.draw do
 
   root :to => 'static#index'
   
+  match '/company', :to => 'static#admin_dashboard'
+  match '/user', :to => 'static#admin_dashboard'
   match '/:view', :to => 'static#dashboard'
   match '*path', :to => 'static#index'
 

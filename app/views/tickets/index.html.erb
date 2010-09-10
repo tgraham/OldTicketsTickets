@@ -11,7 +11,7 @@
     <tr>
       <td><%= ticket.title %></td>
       <td><%= ticket.content %></td>
-      <td><%= ticket.user_id.username %></td>
+      <td><%= ticket.user.username %></td>
       <td><%= ticket.status %></td>
       <td><%= link_to "Edit", edit_ticket_path(ticket) %></td>
       <td><%= link_to "Remove", ticket, :confirm => 'Are you sure?', :method => :delete %></td>
