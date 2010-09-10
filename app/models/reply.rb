@@ -8,7 +8,7 @@ class Reply < ActiveRecord::Base
                     
   attr_accessible :ticket_id, :notes, :screenshot
   
-  validates :notes, :presence => true
+  validates :ticket_id, :notes, :presence => true
   
   after_create :update_ticket
   

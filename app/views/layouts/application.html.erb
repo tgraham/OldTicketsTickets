@@ -9,6 +9,13 @@
   </head>
   <body>
     <%= render '/layouts/header' %>
+    
+    <div class='flash_box'>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}", :class => "hideable" %>
+      <% end %>
+    </div>
+    
     <div id="container">
       <%= yield %>
     </div>

@@ -1,0 +1,13 @@
+<div class="actions">
+  <%= link_to('/classifications') do %>
+    <%= content_tag :span, "Back to Dashboard", :class => "plain" %>
+  <% end%>
+</div>
+<%= semantic_form_for( @classification, :html => { :class => "normal_form" } ) do |f| %>
+  <%= f.inputs %>
+  
+  <%= image_submit_tag 'submit.png', :class => 'signup' %>
+<% end %>
+
+
+

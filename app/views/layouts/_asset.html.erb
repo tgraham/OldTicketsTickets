@@ -1,0 +1,52 @@
+<% title "Assets" %>
+
+<h1>Assets</h1>
+
+<% if current_user.try(:role) == 'admin' %>
+  <div class="actions dashboard_button">
+    <%= link_to(new_asset_path) do %>
+      <%= content_tag :span, "Add Asset", :class => "new_item" %>
+    <% end%>
+  </div>
+<% end %>
+
+<div class="info">
+  <div class="digg_pagination">
+   <%= will_paginate @assets %>
+   <%= form_tag('/asset', :method => 'get') -%>
+     <%= text_field_tag 'page', 1, :class => 'page' %>
+     <%= submit_tag 'Go' %>
+  </div>
+  
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Classification</th>
+      <th>Warranty</th>
+      <th>IP</th>
+    </tr>
+    <% if current_user.try(:role) == 'admin' %>
+      <% assets = @assets %>
+    <% else %>
+      <% assets = @user.company.assets %>
+    <% end %>
+    <% for asset in assets %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <% if current_user.try(:role) == 'admin' %>
+          <td><%= link_to asset.name, edit_asset_path(asset) %></td>
+        <% else %>
+          <td><%= asset.name %></td>
+        <% end %>
+        <td><%= truncate(asset.description) %></td>
+        <td><%= asset.classification.name %></td>
+        <td><%= asset.warranty.strftime('%d/%y') %></td>
+        <td><%= asset.ip %></td>
+        <td><%= link_to "View", asset %></td>
+        <% if current_user.try(:role) == 'admin' %>
+          <td><%= link_to image_tag("/images/delete.png"), asset, :confirm => 'Are you sure?', :method => :delete %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

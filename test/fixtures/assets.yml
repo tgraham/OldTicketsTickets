@@ -1,0 +1,35 @@
+one:
+  name: MyString
+  description: MyText
+  os: MyString
+  location: MyString
+  classification_id: 1
+  peripherals: MyText
+  anti-virus: false
+  software: MyText
+  firmware: MyString
+  serial_number: MyString
+  part_number: MyString
+  service_tag: MyString
+  warranty: 2010-09-09 11:41:15
+  ip: MyString
+  user_name: MyString
+  user_password: MyString
+
+two:
+  name: MyString
+  description: MyText
+  os: MyString
+  location: MyString
+  classification_id: 1
+  peripherals: MyText
+  anti-virus: false
+  software: MyText
+  firmware: MyString
+  serial_number: MyString
+  part_number: MyString
+  service_tag: MyString
+  warranty: 2010-09-09 11:41:15
+  ip: MyString
+  user_name: MyString
+  user_password: MyString

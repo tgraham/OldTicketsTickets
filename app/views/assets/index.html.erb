@@ -1,0 +1,38 @@
+<% title "Assets" %>
+
+<div class="actions">
+  <%= link_to(new_asset_path) do %>
+    <%= content_tag :span, "Add Asset", :class => "new_item" %>
+  <% end%>
+</div>
+<div class="digg_pagination">
+ <%= will_paginate %>
+ <%= form_tag('/assets', :method => 'get') -%>
+   <%= text_field_tag 'page', 1, :class => 'page' %>
+   <%= submit_tag 'Go' %>
+</div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>OS</th>
+    <th>Location</th>
+    <th>Classification</th>
+    <th>Warranty</th>
+    <th>Ip</th>
+  </tr>
+  <% for asset in @assets %>
+    <tr>
+      <td><%= asset.name %></td>
+      <td><%= asset.description %></td>
+      <td><%= asset.os %></td>
+      <td><%= asset.location %></td>
+      <td><%= asset.classification_id %></td>
+      <td><%= asset.warranty %></td>
+      <td><%= asset.ip %></td>
+      <td><%= link_to "Show", asset %></td>
+      <td><%= link_to "Edit", edit_asset_path(asset) %></td>
+      <td><%= link_to image_tag("/images/delete.png"), asset, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

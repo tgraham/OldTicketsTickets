@@ -1,0 +1,10 @@
+<div class="actions">
+  <%= link_to('/asset') do %>
+    <%= content_tag :span, "Back to Dashboard", :class => "plain" %>
+  <% end%>
+</div>
+<%= semantic_form_for( @asset, :html => { :class => "normal_form" } ) do |f| %>
+  <%= f.inputs %>
+
+  <%= image_submit_tag 'submit.png', :class => 'signup' %>
+<% end %>

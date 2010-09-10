@@ -1,0 +1,19 @@
+<% title "Classifications" %>
+
+<div class="actions">
+  <%= link_to(new_classification_path) do %>
+    <%= content_tag :span, "Add Classification", :class => "new_item" %>
+  <% end%>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for classification in @classifications %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= link_to classification.name, edit_classification_path(classification) %></td>
+      <td><%= link_to image_tag("/images/delete.png"), classification, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

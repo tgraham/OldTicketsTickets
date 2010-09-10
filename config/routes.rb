@@ -1,5 +1,9 @@
 Tickets::Application.routes.draw do
 
+  resources :classifications
+
+  resources :assets
+
   resources :replies
 
   resource  :user_sessions

@@ -8,12 +8,17 @@
   <% end%>
 </div>
 
-<div class="ticket_info">
+<div class="info">
 <% if current_user.try(:role) == 'user' %>
   <p>You currently have <%= pluralize(current_user.tickets.where("status != ?", 'Closed').count, 'open ticket') %>.</p>
   <br />
 <% end %>
-  <div class="digg_pagination"><%= will_paginate @tickets %></div>
+  <div class="digg_pagination">
+   <%= will_paginate @tickets %>
+   <%= form_tag('/ticket', :method => 'get') -%>
+     <%= text_field_tag 'page', 1, :class => 'page' %>
+     <%= submit_tag 'Go' %>
+  </div>
   <table>
     <tr>
       <th>Ticket ID</th>

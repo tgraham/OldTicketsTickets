@@ -8,7 +8,7 @@ class RepliesController < ApplicationController
     @reply = Reply.new(params[:reply])
     @reply.user_id = current_user.id
     
-    if @reply.user.try(:role) == 'admin'
+    if @reply.user.is_admin?
       @reply.ticket.status = 'Answered'
     else
       @reply.ticket.status = 'Customer-Reply'
@@ -18,7 +18,8 @@ class RepliesController < ApplicationController
       flash[:notice] = "Successfully added reply."
       redirect_to '/ticket'
     else
-      render :action => 'new'
+      flash[:alert] = "Please leave a comment."
+      redirect_to :back
     end
   end
   

@@ -40,9 +40,9 @@ h2 {
 #top {
   width: 960px;
   height: 40px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   background-color: #FFF;
-  padding: 5px 40px;
+  padding: 5px 40px 5px 15px;
   border: solid 1px black;
   top: 0px;
 }
@@ -75,11 +75,10 @@ h2 {
 #container {
   width: 960px;
   min-height: 300px;
-  margin: 0 auto;
+  margin: 10px auto 0;
   background-color: #F2F2F2;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+  padding: 20px 40px 20px 15px;
+  border: 1px solid black;
 }
 
 /* Pretty Form */
@@ -210,7 +209,8 @@ h2 {
 #ticket li.ticket a, 
 #account li.account a,
 #user li.user a,
-#company li.company a {
+#company li.company a,
+#asset li.asset a {
   background: url('/images/menu-current.png') no-repeat scroll left center transparent;
   font-weight: bold;
   color: #000 !important;
@@ -221,7 +221,7 @@ h2 {
 
 #float_left {
   float: left;
-  width: 87%;
+  width: 85%;
 }
 
 #float_right {
@@ -232,7 +232,7 @@ h2 {
   width: 12%;
 }
 
-.ticket_info, .account_info {
+.info {
   margin: 40px 0;
 }
 
@@ -355,7 +355,7 @@ td {
 }
 
 .dashboard_button {
-  padding: 0 25px 0 0;
+  padding: 0;
   margin-top: -6px;
 }
 
