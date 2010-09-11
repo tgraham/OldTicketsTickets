@@ -6,7 +6,7 @@ Tickets::Application.routes.draw do
 
   resources :replies
 
-  resource  :user_sessions
+  resource  :user_session
   resources :users, :password_resets, :tickets, :companies
   
   match '/login', :to => 'user_sessions#new', :as => :login
