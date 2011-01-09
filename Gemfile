@@ -9,7 +9,7 @@ group :development do
 end
 
 gem 'authlogic'
-gem 'formtastic',       '~> 1.1.0'
+gem 'formtastic'
 gem 'will_paginate',    '~> 3.0.pre2'
 gem 'cancan'
 gem 'paperclip'
