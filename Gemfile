@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
-gem 'mysql'
+gem 'mysql2'
 
 group :development do
   gem 'nifty-generators'

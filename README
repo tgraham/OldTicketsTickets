@@ -7,7 +7,7 @@ Rails 3 Ticketing system
 gems:
 =====
 rails 3
-ruby-mysql
+mysql2
 nifty-generators
 authlogic 
 formtastic
