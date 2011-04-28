@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
 
   def index
+    @users = User.page(params[:page]).per(1)
   end
   
   def dashboard
@@ -21,7 +22,7 @@ class StaticController < ApplicationController
       return
     else
       @view = env['PATH_INFO'].gsub('/', '')
-      @users = User.page(params[:page]).per(2)
+      @users = User.page(params[:page]).per(1)
       @companies = Company.page(params[:page]).per(1)
     end
   end
