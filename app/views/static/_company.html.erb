@@ -9,8 +9,8 @@
 </div>
 
 <div class="info">
-  <div class="digg_pagination">
-   <%= will_paginate @companies %>
+  <div>
+   <%= paginate @companies %>
    <%= form_tag('/company', :method => 'get') -%>
      <%= text_field_tag 'page', 1, :class => 'page' %>
      <%= submit_tag 'Go' %>
@@ -29,5 +29,5 @@
     <% end %>
   </table>
 
-  <div class="digg_pagination"><%= will_paginate @companies %></div>
+  <div><%= paginate @companies %></div>
 </div>

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if current_user.is_user?
       redirect_to '/account'
     else
-      @users = User.paginate :page => params[:page]
+      @users = User.page(params[:page])
     end
   end
   

@@ -12,7 +12,7 @@
 
 <div class="info">
   <div class="digg_pagination">
-   <%= will_paginate @assets %>
+   <%= paginate @assets %>
    <%= form_tag('/asset', :method => 'get') -%>
      <%= text_field_tag 'page', 1, :class => 'page' %>
      <%= submit_tag 'Go' %>

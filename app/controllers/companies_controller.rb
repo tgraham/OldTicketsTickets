@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @companies = Company.paginate :page => params[:page]
+    @companies = Company.page(params[:page])
   end
   
   def new

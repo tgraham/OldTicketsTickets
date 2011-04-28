@@ -1,6 +1,6 @@
 <% title "Users" %>
 
-<h1>Users</h1>
+<h1>Users - <%= @users.first.name %></h1>
 
 <div class="actions dashboard_button">
   <%= link_to(new_user_path) do %>
@@ -9,8 +9,8 @@
 </div>
 
 <div class="info">
-  <div class="digg_pagination">
-   <%= will_paginate @users %>
+  <div>
+   <%= paginate @users %>
    <%= form_tag('/user', :method => 'get') -%>
      <%= text_field_tag 'page', 1, :class => 'page' %>
      <%= submit_tag 'Go' %>
@@ -32,5 +32,5 @@
     <% end %>
   </table>
   <br />
-  <div class="digg_pagination"><%= will_paginate @users %></div>
+  <div><%= paginate @users %></div>
 </div>

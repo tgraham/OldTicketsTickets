@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @tickets = Ticket.paginate :page => params[:page]
+    @tickets = Ticket.page(params[:page])
   end
   
   def new

@@ -2,7 +2,7 @@ class AssetsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @assets = Asset.paginate :page => params[:page]
+    @assets = Asset.page(params[:page])
   end
   
   def show

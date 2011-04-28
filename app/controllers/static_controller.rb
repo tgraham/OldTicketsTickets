@@ -10,8 +10,8 @@ class StaticController < ApplicationController
     else
       @view = params[:view]
       @user = current_user
-      @tickets = Ticket.paginate :page => params[:page]
-      @assets = Asset.paginate :page => params[:page]
+      @tickets = Ticket.page(params[:page])
+      @assets = Asset.page(params[:page])
     end
   end
   
@@ -21,9 +21,8 @@ class StaticController < ApplicationController
       return
     else
       @view = env['PATH_INFO'].gsub('/', '')
-      @users = User.paginate :page => params[:page]
-      @companies = Company.paginate :page => params[:page]
+      @users = User.page(params[:page]).per(2)
+      @companies = Company.page(params[:page]).per(1)
     end
-    render 'dashboard'
   end
 end

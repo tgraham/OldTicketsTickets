@@ -14,7 +14,7 @@
   <br />
 <% end %>
   <div class="digg_pagination">
-   <%= will_paginate @tickets %>
+   <%= paginate @tickets %>
    <%= form_tag('/ticket', :method => 'get') -%>
      <%= text_field_tag 'page', 1, :class => 'page' %>
      <%= submit_tag 'Go' %>
@@ -49,5 +49,5 @@
     <% end %>
   </table>
   <br />
-  <div class="digg_pagination"><%= will_paginate @tickets %></div>
+  <div class="digg_pagination"><%= paginate @tickets %></div>
 </div>

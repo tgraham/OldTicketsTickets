@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   
   ROLES = %w[user admin]
   
+  def name
+    self.first_name + ' ' + self.last_name
+  end
+  
   def deliver_reset_email!
     reset_perishable_token!
     Notifier.reset_email(self).deliver

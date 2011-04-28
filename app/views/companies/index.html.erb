@@ -5,7 +5,7 @@
     <%= content_tag :span, "Add Company", :class => "new_item" %>
   <% end%>
 </div>
-<div class="digg_pagination"><%= will_paginate @companies %></div>
+<div class="digg_pagination"><%= paginate @companies %></div>
 <table>
   <tr>
     <th>Company</th>
@@ -19,4 +19,4 @@
   <% end %>
 </table>
 
-<div class="digg_pagination"><%= will_paginate @companies %></div>
+<div class="digg_pagination"><%= paginate @companies %></div>
